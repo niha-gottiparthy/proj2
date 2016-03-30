@@ -17,11 +17,13 @@ There is no doubt that people often go crazy when it comes to animals here at Ca
   * certain Users are Administrators and have the power to modify and remove photos/comments
 2. Post
   * has photo and optional caption (caption cannot be posted alone since this is an app focused on photos)
+  * has comments
   * belongs to a User
   * links to a poster’s page
 3. Comment
   * has text
   * belongs to a User
+  * belongs to a Post
 
 ##Features:
   * Users can log in
