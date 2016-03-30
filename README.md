@@ -13,8 +13,8 @@ There is no doubt that people often go crazy when it comes to animals here at Ca
 
 ##Models and Description:
 1. User
-  * has name, berkeley email, and many photos
-  * certain Users are Administrators and the power to modify and remove photos/comments
+  * has name, (berkeley/school) email, and many photos
+  * certain Users are Administrators and have the power to modify and remove photos/comments
 2. Post
   * has photo and optional caption (caption cannot be posted alone since this is an app focused on photos)
   * belongs to a User
@@ -27,6 +27,8 @@ There is no doubt that people often go crazy when it comes to animals here at Ca
   * Users can log in
   * Users can like and post photos
   * Users can comment on photos
+  * Users share a feed to post photos to
+  * Users also have their own page with only their own content
   * Users can modify or remove their own content
   * Admins can modify or remove anyone’s content
 
