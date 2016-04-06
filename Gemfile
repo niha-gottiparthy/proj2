@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
-
+# Devise gem for handling user validation/login/etc
+gem 'devise'
+# React gem to use react framework
+gem 'react-rails', '~> 1.6.0'
+# Paperclip gem to handle image posting on app
+gem "paperclip", "~> 5.0.0.beta1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record

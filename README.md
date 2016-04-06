@@ -23,24 +23,16 @@ There is no doubt that people often go crazy when it comes to animals here at Ca
 ##Models and Description:
 ###User
 ```r
-@name: string   
-@email: string  
-@privilege: int # 0 for normal, 1 for admin 
-@date_created: date
-
 validates_format_of :email, :with => Devise.email_regexp, presence: true, uniqueness: true
 validates :name, presence: true, uniqueness: true
 has_many :Posts
 ```
-Each user will have a unique username, unique email, and privilege. Privilege will be preset to 0 and can only be modified by an admin. 
+Each user will have a unique username, unique email, and privilege.
+
 ###Post
 ```r
-@id: integer
-@likes: integer
-@caption: string
 has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
 validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/ 
-validates :id, presence: true, uniqueness: true
 belongs_to: User
 ```
 
@@ -52,9 +44,19 @@ https://github.com/reactjs/react-rails for comments
 
 https://github.com/thoughtbot/paperclip# models for images
 
+Deploying on Heroku using ImageMagick alongside paperclip gem
+https://github.com/ello/heroku-buildpack-imagemagick-cedar-14
+
 ##Bootstrap template
 http://blackrockdigital.github.io/startbootstrap-clean-blog/post.html for template
 
+#Commands to Run
+rails g devise User
+rails g migration AddAdminToUsers admin:boolean
+#go into actual migration and set default: false
+rails g controller Users
+rails g model Post user_id: integer likes: integer caption: string
+rails g controller Posts
 
 ##Features:
   * Users can log in
