@@ -3,7 +3,9 @@ TA: Howard
 Email: howardxchen@gmail.com
 
 Team Members: Thong Dinh, Allen Wang, Niha Gottiparthy
+
 Github Repo: https://github.com/niha-gottiparthy/proj2
+
 Demo Link: _________
 
 ## Idea: 
@@ -19,7 +21,7 @@ There is no doubt that people often go crazy when it comes to animals here at Ca
   * Will iterate through ```User.posts``` and displays each one of them in a separate div. Each of these posts will display the number of likes, the image using the paperclip gem, and edit feature, a delete feature, and a comment feature utilizing react-rails. 
 
 ##Models and Description:
-User
+###User
 ```r
 @name: string   
 @email: string  
@@ -31,7 +33,7 @@ validates :name, presence: true, uniqueness: true
 has_many :Posts
 ```
 Each user will have a unique username, unique email, and privilege. Privilege will be preset to 0 and can only be modified by an admin. 
-2. Post
+###Post
 ```r
 @id: integer
 @likes: integer
@@ -47,6 +49,7 @@ Each post must contain a unique id, a single photo, and an optimal caption.
   
 ##Gems
 https://github.com/reactjs/react-rails for comments
+
 https://github.com/thoughtbot/paperclip# models for images
 
 ##Bootstrap template
