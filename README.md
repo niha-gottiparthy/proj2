@@ -50,13 +50,13 @@ https://github.com/ello/heroku-buildpack-imagemagick-cedar-14
 ##Bootstrap template
 http://blackrockdigital.github.io/startbootstrap-clean-blog/post.html for template
 
-#Commands to Run
-rails generate devise User
-rails generate migration AddPrivilegeToUser privilege:integer
-rails generate paperclip post image
-rails generate migration AddLikesToPost likes:integer
-rails generate migration AddCaptionToPost caption:string
-rails generate migration AddUserToPost user:user
+#Commands Ran for Setup
+ * rails generate devise User
+ * rails generate migration AddPrivilegeToUser privilege:integer
+ * rails generate paperclip post image
+ * rails generate migration AddLikesToPost likes:integer
+ * rails generate migration AddCaptionToPost caption:string
+ * rails generate migration AddUserToPost user:user
 
 ##Features:
   * Users can log in
