@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Bootstrap for rails
+gem 'bootstrap-sass', '~> 3.3.6'
 # Devise gem for handling user validation/login/etc
 gem 'devise'
 # React gem to use react framework
