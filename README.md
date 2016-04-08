@@ -52,6 +52,7 @@ http://blackrockdigital.github.io/startbootstrap-clean-blog/post.html for templa
 
 #Commands to Run
 rails generate devise User
+rails generate model Post
 rails generate migration AddPrivilegeToUser privilege:integer
 rails generate paperclip post image
 rails generate migration AddLikesToPost likes:integer

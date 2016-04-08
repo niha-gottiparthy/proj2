@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406061840) do
+ActiveRecord::Schema.define(version: 20160408223535) do
+
+# Could not dump table "posts" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160406061840) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "privilege"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
