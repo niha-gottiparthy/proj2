@@ -51,12 +51,12 @@ https://github.com/ello/heroku-buildpack-imagemagick-cedar-14
 http://blackrockdigital.github.io/startbootstrap-clean-blog/post.html for template
 
 #Commands to Run
-rails g devise User
-rails g migration AddAdminToUsers admin:boolean
-#go into actual migration and set default: false
-rails g controller Users
-rails g model Post user_id: integer likes: integer caption: string
-rails g controller Posts
+rails generate devise User
+rails generate migration AddPrivilegeToUser privilege:integer
+rails generate paperclip post image
+rails generate migration AddLikesToPost likes:integer
+rails generate migration AddCaptionToPost caption:string
+rails generate migration AddUserToPost user:user
 
 ##Features:
   * Users can log in
