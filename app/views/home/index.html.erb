@@ -113,8 +113,7 @@
             <p>Test</p>
               <% @posts.each do |post| %>
                 <% if post %>
-                  <p> <%= post.caption %> </p>
-                  <%= render post %>
+                  <p> <%= render post %> </p>
                 <% end %>
               <% end %>
             <% end %>
