@@ -1,0 +1,17 @@
+<h1>Upload Photo</h1>
+
+<%= form_for @post do |f| %>
+  <%= render 'shared/errors', object: @post %>
+
+  <p>
+    <%= f.label :caption %>
+    <%= f.text_field :caption %>
+  </p>
+
+  <p>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </p>
+
+  <%= f.submit 'Upload' %>
+<% end %>

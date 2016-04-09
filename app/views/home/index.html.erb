@@ -108,9 +108,12 @@
       <div class="post-preview">
         <a href="post.html">
           <h2 class="post-title">
+            Testing Suite:
             <% if @posts %>
+            <p>Test</p>
               <% @posts.each do |post| %>
                 <% if post %>
+                  <p> <%= post.caption %> </p>
                   <%= render post %>
                 <% end %>
               <% end %>
