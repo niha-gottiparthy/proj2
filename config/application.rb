@@ -22,5 +22,8 @@ module Proj2
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.less.paths << File.join(Rails.root,'vendor','frameworks')
+    # Should be set to true in production.
+    config.less.compress = false
   end
 end
