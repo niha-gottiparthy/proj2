@@ -1,4 +1,4 @@
 .idea/*
 Gemfile.lock
 log/*
-tmp/
+tmp/*
