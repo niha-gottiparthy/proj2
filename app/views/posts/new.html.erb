@@ -1,18 +1,28 @@
-<h1>Upload Photo</h1>
+<div class="col-md-12" style="margin-top:100px">
+  <div id="loginModal" class="modal show" style="position:relative; overflow:auto;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h1>Upload Photo</h1>
 
-<%= form_for @post do |f| %>
-  <%= render 'shared/errors', object: @post %>
+            <%= form_for @post do |f| %>
+              <%= render 'shared/errors', object: @post %>
 
-  <p>
-    <%= f.label :caption %>
-    <%= f.text_field :caption %>
-  </p>
+              <p>
+                <%= f.label :caption %>
+                <%= f.text_field :caption %>
+              </p>
 
-  <p>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </p>
+              <p>
+                <%= f.label :image %>
+                <%= f.file_field :image %>
+              </p>
 
-  <%= f.submit 'Upload' %>
-  <%= button_to 'Cancel', home_path(), :class => "button medium", :method => :get %>
-<% end %>
+              <%= f.submit 'Upload' %>
+              <%= button_to 'Cancel', home_path(), :class => "button medium", :method => :get %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

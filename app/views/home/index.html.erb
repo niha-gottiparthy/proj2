@@ -42,19 +42,18 @@
       </div>
       <hr>
       <div class="post-preview">
-        <a href="post.html">
           <h2 class="post-title">
-            Testing Suite:
-            <% @top = Post.new %>
-            <% if @posts %>
-            <p>Test</p>
-            <% @top = @posts.first %>
-              <% @posts.each do |post| %>
-                <p> <%= render post %> </p>
+            <center>
+              All Dogs
+              <% @top = Post.new %>
+              <% if @posts %>
+              <% @top = @posts.first %>
+                <% @posts.each do |post| %>
+                  <p> <%= render post %> </p>
+                <% end %>
               <% end %>
-            <% end %>
+            </center>
           </h2>
-        </a>
         <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
       </div>
       <hr>
