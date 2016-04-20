@@ -5,9 +5,20 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="site-heading">
-          <h1>Clean Blog</h1>
+          <h1>Top Dog</h1>
           <hr class="small">
-          <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+          <center>
+            <% @top = Post.new %>
+            <% if @posts %>
+            <% @top = @posts.first %>
+              <% @posts.each do |post| %>
+                <% if post.likes > @top.likes %>
+                  <% @top = post %>
+                <% end %>
+              <% end %>
+            <% end %>
+            <%= render @top %>
+          </center>
         </div>
       </div>
     </div>
@@ -34,12 +45,12 @@
         <a href="post.html">
           <h2 class="post-title">
             Testing Suite:
+            <% @top = Post.new %>
             <% if @posts %>
             <p>Test</p>
+            <% @top = @posts.first %>
               <% @posts.each do |post| %>
-                <% if post %>
-                  <p> <%= render post %> </p>
-                <% end %>
+                <p> <%= render post %> </p>
               <% end %>
             <% end %>
           </h2>
