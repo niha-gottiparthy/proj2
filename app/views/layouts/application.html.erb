@@ -78,6 +78,11 @@
 		        <% end %>
 	        </li>
 	        <li>
+	        	<% if user_signed_in? %>
+	        		<%= link_to 'New Post', new_path, :style=>'color:#FFFFFF; font-size:10px' %>
+	        	<% end %>
+	        </li>
+	        <li>
 	          <%= link_to 'Users', users_path, :method=>'get', :style=>'color:#FFFFFF; font-size: 10px'%>
 	        </li>
 	        <li>

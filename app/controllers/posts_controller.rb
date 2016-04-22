@@ -26,6 +26,9 @@ class PostsController < ApplicationController
 
 	def like
 		@post = Post.find(params[:id])
+		@post.update_column(:likes, @post.likes + 1)
+		@post.save
+		redirect_to user_path(id: @post.user_id)
 	end
 
 	def destroy
