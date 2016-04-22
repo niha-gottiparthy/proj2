@@ -68,7 +68,7 @@
 	          <a href="about.html" style="color:white">About</a>
 	        </li>
 	        <li>
-	          <a href="post.html" style="color:white">Users</a>
+	          <%= link_to 'Users', users_path, :method=>'get', :style=>'color:#FFFFFF;'%>
 	        </li>
 	        <li>
 	        	<% if user_signed_in? %>
