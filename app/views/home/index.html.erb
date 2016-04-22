@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="mbr-section__container">
-          <div class="mbr-buttons mbr-buttons--auto-align btn-inverse"><a class="btn btn-lg btn-default" href="http://www.youtube.com/c/mobirise" target="_blank">To see more dogs</a></div>
+          <div class="mbr-buttons mbr-buttons--auto-align btn-inverse"><a class="btn btn-lg btn-default" href="/users" target="_blank">To see more dogs</a></div>
         </div>
       </div>
 
@@ -64,10 +64,10 @@
       <div class="post-preview">
         <a href="post.html">
           <h2 class="post-title">
-            Featuring other top dogs of Berkeley...
+            Now for the other top dogs...
           </h2>
           <h3 class="post-subtitle">
-            Problems look mighty small from 150 miles up
+            Tiny but mighty
           </h3>
         </a>
         <p class="post-meta">Posted by <a href="#">Top Dogs of Berkeley</a> on September 24, 2014</p>
@@ -77,12 +77,13 @@
           <h2 class="post-title">
             <center>
               All Dogs
-              <% @top = Post.new %>
               <% if @posts %>
-              <% @top = @posts.first %>
                 <% @posts.each do |post| %>
-                  <%= link_to image_tag(post.image(:medium), class: 'media-object'), post.image(:medium), target: '_blank' %>
-                  <h4>Featuring <%= post.caption %> with a whopping <%= post.likes %> likes! </h4>
+                      <% if post.id != @top.id %>
+                        <%= link_to image_tag(post.image(:medium), class: 'media-object'), post.image(:medium), target: '_blank' %>
+                        <h4>"<%= post.caption %>"</h4>
+                          <h4>Likes: <%= post.likes %></h4>
+                      <% end %>
                 <% end %>
               <% end %>
             </center>
