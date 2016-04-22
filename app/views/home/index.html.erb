@@ -17,7 +17,9 @@
                 <% end %>
               <% end %>
             <% end %>
-            <%= render @top %>
+            <% if @top != NIL%>
+              <%= render @top %>
+            <% end %>
           </center>
         </div>
       </div>

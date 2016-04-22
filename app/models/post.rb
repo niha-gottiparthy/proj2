@@ -1,5 +1,8 @@
 class Post < ActiveRecord::Base
-	has_attached_file :image, :styles => { :small => "150x150>" },
+	has_attached_file :image, :styles =>  {
+			:thumb => "100x100#",
+			:small  => "150x150>",
+			:medium => "300x300" },
 	                  url: "/system/:hash.:extension",
 	                  hash_secret: "abc123"
 
