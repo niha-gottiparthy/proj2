@@ -17,7 +17,7 @@
         <% end %>
         <% if @top != NIL%>
             <br/>
-            <%= link_to image_tag(@top.image(:medium), class: 'media-object'), @top.image(:medium), target: '_blank' %>
+            <%= link_to image_tag(@top.image(:medium), class: 'media-object'), "users/#{@top.user_id}", target: '/' %>
             <h4>Featuring <%= @top.caption %> with a whopping <%= @top.likes %> likes! </h4>
         <% end %>
       </div>
@@ -46,79 +46,38 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="site-heading">
 
-          <hr class="small">
-          <center>
-          </center>
-        </div>
       </div>
     </div>
   </div>
-</header>
 
 <!-- Main Content -->
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="post-preview">
-        <a href="post.html">
+
           <h2 class="post-title">
-            Now for the other top dogs...
+            Now for the other dogs...
           </h2>
-          <h3 class="post-subtitle">
-            Tiny but mighty
-          </h3>
-        </a>
-        <p class="post-meta">Posted by <a href="#">Top Dogs of Berkeley</a> on September 24, 2014</p>
-      </div>
-      <hr>
-      <div class="post-preview">
-          <h2 class="post-title">
-            <center>
-              All Dogs
+          <div class="row">
               <% if @posts %>
                 <% @posts.each do |post| %>
-                      <% if post.id != @top.id %>
-                        <%= link_to image_tag(post.image(:medium), class: 'media-object'), post.image(:medium), target: '_blank' %>
-                        <h4>"<%= post.caption %>"</h4>
-                          <h4>Likes: <%= post.likes %></h4>
-                      <% end %>
-                <% end %>
-              <% end %>
-            </center>
-          </h2>
-        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
-      </div>
-      <hr>
-      <div class="post-preview">
-        <a href="post.html">
-          <h2 class="post-title">
-            Science has not yet mastered prophecy
-          </h2>
-          <h3 class="post-subtitle">
-            We predict too much for the next year and yet far too little for the next ten.
-          </h3>
-        </a>
-        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
-      </div>
-      <hr>
-      <div class="post-preview">
-        <a href="post.html">
-          <h2 class="post-title">
-            Failure is not an option
-          </h2>
-          <h3 class="post-subtitle">
-            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-          </h3>
-        </a>
-        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
-      </div>
-      <hr>
+                    <% if post.id != @top.id %>
+                      <div class="col-xs-3" style="width: 180px; height: 200px">
+
+                         <%= link_to image_tag(post.image(:small), class: 'media-object'), "users/#{post.user_id}", target: '_blank' %>
+
+                      </div>
+                    <% end %>
+                    <% end %>
+            <% end %>
+          </div>
+         </div>
       <!-- Pager -->
       <ul class="pager">
         <li class="next">
-          <a href="#">Older Posts &rarr;</a>
+          <a href="users">Older Posts &rarr;</a>
         </li>
       </ul>
     </div>
