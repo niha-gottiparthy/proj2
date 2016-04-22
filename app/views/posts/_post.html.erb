@@ -1,9 +1,10 @@
 <%= link_to image_tag(post.image(:medium), class: 'media-object'), post.image(:medium), target: '_blank' %>
 <h4>"<%= post.caption %>"</h4>
 <h4> Likes: <%= post.likes %></h4>
-<% if current_user.id != post.user_id %>
+<% if current_user.id != post.user_id || current_user.admin == true %>
 	<%= button_to "Like", like_path(id: post.id), :class => "button small", :method => :patch %>
 <% end %>
-<% if current_user.id == post.user_id %>
+<% if current_user.id == post.user_id || current_user.admin == true %>
+	<%= button_to "Edit", edit_path(id: post.id), :class => "button small", :method => :patch %>
 	<%= button_to "Delete", destroy_path(id: post.id), :class => "button small", :method => :delete %>
 <% end %>
