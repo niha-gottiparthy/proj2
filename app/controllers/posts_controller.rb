@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	before_filter :authenticate_user!
   	def index
     	@posts = Post.order('created_at')
  	end
@@ -21,6 +22,17 @@ class PostsController < ApplicationController
 		else
 			render 'new'
 		end
+	end
+
+	def like
+		@post = Post.find(params[:id])
+	end
+
+	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy
+		@post.save
+		redirect_to user_path(id: @post.user_id)
 	end
 
 	private

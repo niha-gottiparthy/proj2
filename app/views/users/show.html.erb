@@ -5,11 +5,15 @@
           <div class="modal-header">
 			<h3> <%= @user.name %>'s Profile </h3>
 			<p>Name: <%= @user.name if @user.name %></p>
-			<p>Join Date: <%= @user.created_at if @user.created_at %></p>
-			<p>Posts: <%= @user.posts.each do |p| %>
+			<p>Join Date: <%= @user.created_at.strftime("%m/%d/%Y") if @user.created_at %></p>
+			<p>Posts: 
+				<% if @user.posts.empty? %>
+					User has not uploaded any photos :(
+				<% end %>
+				<% @user.posts.each do |p| %>
 				<ul>
 					<% if p != NIL %>
-						<%= link_to image_tag(p.image.url, class: 'media-object'), p.image.url, target: '_blank' %>
+						<%= render p %>
 					<% end %>
 				</ul>
 				<% end %>

@@ -69,7 +69,13 @@
 	          <a href="/" style="color:white; font-size: 10px">Home</a>
 	        </li>
 	        <li>
-	          <a href="about.html" style="color:white; font-size: 10px">About</a>
+	        	<% if user_signed_in? %>
+		        	<% User.all.each do |user| %>
+		        		<% if user.id == current_user.id %>
+		        			<%= link_to 'Profile', user, :style=>'color:#FFFFFF;'%>
+		        		<% end %>
+		        	<% end %>
+		        <% end %>
 	        </li>
 	        <li>
 	          <%= link_to 'Users', users_path, :method=>'get', :style=>'color:#FFFFFF; font-size: 10px'%>
@@ -124,7 +130,7 @@
 	            </a>
 	          </li>
 	        </ul>
-	        <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+	        <p class="copyright text-muted">Copyright &copy; BTD</p>
 	      </div>
 	    </div>
 	  </div>

@@ -11,4 +11,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up){ |u| u.permit(:name, :email, :password, :password_confirmation)}
     devise_parameter_sanitizer.for(:account_update){ |u| u.permit(:name, :email, :password, :password_confirmation) }
   end
+
+  def authenticate_user!
+    if user_signed_in?
+      super
+    else
+      redirect_to new_user_session_path, :notice => 'Please sign in to continue'
+    end
+	end
 end
