@@ -9,12 +9,13 @@ User.create([{name: 'Fred', email: 'fred@gmail.com', password: 'password', passw
              {name: 'James', email: 'james@gmail.com', password: 'password', password_confirmation: 'password'},
              {name: 'Sarah', email: 'sarah@gmail.com', password: 'password', password_confirmation: 'password'},
              {name: 'Lynda', email: 'lynda@gmail.com', password: 'password', password_confirmation: 'password'}])
-Post.create([{caption: "Wolf wolf", image: File.new("samples/1.jpg"), user_id: 0},
-             {caption: "Treat pls", image: File.new("samples/2.jpg"), user_id: 1},
-             {caption: "Hiiii", image: File.new("samples/3.jpg"), user_id: 2},
-             {caption: "Frankie", image: File.new("samples/4.jpg"), user_id: 3},
-             {caption: "thong", image: File.new("samples/5.jpeg"), user_id: 0},
-             {caption: "Jennifer", image: File.new("samples/6.jpeg"), user_id: 1},
-             {caption: "Grassy day", image: File.new("samples/7.jpeg"), user_id: 2},
-             {caption: "Love", image: File.new("samples/8.jpg"), user_id: 3},
-             {caption: "Yay!", image: File.new("samples/9.jpeg"), user_id: 0}])
+
+Post.create([{caption: "Wolf wolf", image_file_name: "samples/1.jpg", user_id: 1, likes: 40, image: File.open("samples/1.jpg")},
+             {caption: "Treat pls", image_file_name: "samples/2.jpg", user_id: 1, likes: 32, image: File.open("samples/2.jpg")},
+             {caption: "Hiiii", image_file_name: "samples/3.jpg", user_id: 2, likes: 4, image: File.open("samples/3.jpg")},
+             {caption: "Frankie", image_file_name: "samples/4.jpg", user_id: 3, likes: 3, image: File.open("samples/4.jpg")},
+             {caption: "thong", image_file_name: "samples/5.jpeg", user_id: 3, likes: 1, image: File.open("samples/5.jpeg")},
+             {caption: "Jennifer", image_file_name: "samples/6.jpeg", user_id: 1, likes: 34, image: File.open("samples/6.jpeg")},
+             {caption: "Grassy day", image_file_name: "samples/7.jpeg", user_id: 2, likes: 50, image: File.open("samples/7.jpeg")},
+             {caption: "Love", image_file_name: "samples/8.jpg", user_id: 3, likes: 78, image: File.open("samples/8.jpg")},
+             {caption: "Yay!", image_file_name: "samples/9.jpeg", user_id:2, likes: 9, image: File.open("samples/9.jpeg")}])
