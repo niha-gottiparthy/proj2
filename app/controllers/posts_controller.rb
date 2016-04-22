@@ -24,8 +24,21 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def edit
+		@post = Post.find(params[:id])
+	end
+
+	def update
+		@post = Post.find(params[:id])
+		@post.update(post_params)
+		redirect_to user_path(id: @post.user_id)
+	end
+
 	def like
 		@post = Post.find(params[:id])
+		@post.update_column(:likes, @post.likes + 1)
+		@post.save
+		redirect_to user_path(id: @post.user_id)
 	end
 
 	def destroy

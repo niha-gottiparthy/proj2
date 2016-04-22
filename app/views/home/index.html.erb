@@ -62,7 +62,7 @@
           </h2>
           <div class="row">
               <% if @posts %>
-                <% @posts.each do |post| %>
+                <% @posts.reverse.each do |post| %>
                     <% if post.id != @top.id %>
                       <div class="col-xs-3" style="width: 180px; height: 200px">
 
