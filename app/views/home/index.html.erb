@@ -19,6 +19,36 @@
             <br/>
             <%= link_to image_tag(@top.image(:medium), class: 'media-object'), "users/#{@top.user_id}", target: '/' %>
             <h4>Featuring <%= @top.caption %> with a whopping <%= @top.likes %> likes! </h4>
+           <% if @top.comments.any? %> 
+           <h2>Comments</h2>
+          <% @top.comments.each do |comment| %>
+            <p>
+              <b>Commenter:</b>
+              <h4><%= comment.commenter %></h4>
+            </p>
+
+            <p>
+              <b>Comment:</b>
+              <%= comment.body %>
+            </p>
+          <% end %>
+          <% end %>
+
+            <h2>Add a comment:</h2>
+            <%= form_for([@top, @top.comments.build]) do |f| %>
+              <div class="field">
+                <%= f.label :commenter %><br />
+                <%= f.text_field :commenter %>
+              </div>
+              <div class="field">
+                <%= f.label :body %><br />
+                <%= f.text_area :body %>
+              </div>
+              <div class="actions">
+                <%= f.submit %>
+              </div>
+            <% end %>
+
         <% end %>
       </div>
       <div class="mbr-box__magnet mbr-class-mbr-box__magnet--center-left col-sm-6 mbr-section__right">

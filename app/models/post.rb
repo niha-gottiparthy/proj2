@@ -11,4 +11,5 @@ class Post < ActiveRecord::Base
 	validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
 	validates :likes, :user_id, :caption, presence: true
 	belongs_to :user
+	has_many :comments
 end

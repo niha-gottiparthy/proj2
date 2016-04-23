@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'home#index'
   resources :posts, only: [:new, :create, :show, :edit, :update, :like, :destroy]
+  resources :posts do
+    resources :comments
+  end
   devise_for :users
   resources :users
   get 'posts/new', to: 'posts#new', as: 'new'
