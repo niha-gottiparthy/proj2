@@ -46,10 +46,10 @@ Each post must contain a unique id, a single photo, and a caption. We'll be usin
 
 ###Comment
 
-This will be made using react and will belong to each post. 
+Made using a basic form_for. Each will have a `user` and `body` field.
   
 ##Gems
-https://github.com/reactjs/react-rails for comments
+https://github.com/reactjs/react-rails (No longer used).
 
 https://github.com/thoughtbot/paperclip# models for images
 
