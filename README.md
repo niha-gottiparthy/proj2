@@ -6,7 +6,7 @@ Team Members: Thong Dinh, Allen Wang, Niha Gottiparthy
 
 Github Repo: https://github.com/niha-gottiparthy/proj2
 
-Demo Link: _________
+Demo Link: https://youtu.be/lHTJA_YQyPE
 
 ## Idea: 
 
