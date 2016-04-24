@@ -16,6 +16,36 @@
 							<%= render p %>
 						<% end %>
 					</ul>
+					<h4>Add a comment:</h4>
+		            <%= form_for([p, p.comments.build]) do |f| %>
+		              <div class="field">
+		                <%= f.label :commenter %><br />
+		                <%= f.text_field :commenter %>
+		              </div>
+		              <div class="field">
+		                <%= f.label :body %><br />
+		                <%= f.text_area :body %>
+		              </div>
+		              <div class="actions">
+		                <%= f.submit %>
+		              </div>
+		            <% end %>
+		            <br/>
+		          <% if p.comments.first.body == NIL %>
+		          <h4>Comments</h4>
+		          <p> No comments yet :( </p>
+		          <% else %>
+		          <h4>Comments</h4>
+		          <% p.comments.each do |comment| %>
+		            <p>
+		              <%if comment.commenter != NIL %>
+		                <b><%= comment.commenter %> says:</b>
+		                "<%= comment.body %>"
+		              <%end%>
+		            </p>
+
+		          <% end %>
+		          <% end %>
 					<% end %>
 				</p>
 			</center>

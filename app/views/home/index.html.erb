@@ -19,22 +19,8 @@
             <br/>
             <%= link_to image_tag(@top.image(:medium), class: 'media-object'), "users/#{@top.user_id}", target: '/' %>
             <h4>Featuring <%= @top.caption %> with a whopping <%= @top.likes %> likes! </h4>
-           <% if @top.comments.any? %> 
-           <h2>Comments</h2>
-          <% @top.comments.each do |comment| %>
-            <p>
-              <b>Commenter:</b>
-              <h4><%= comment.commenter %></h4>
-            </p>
-
-            <p>
-              <b>Comment:</b>
-              <%= comment.body %>
-            </p>
-          <% end %>
-          <% end %>
-
-            <h2>Add a comment:</h2>
+            <br/>
+            <h4>Add a comment:</h4>
             <%= form_for([@top, @top.comments.build]) do |f| %>
               <div class="field">
                 <%= f.label :commenter %><br />
@@ -48,6 +34,22 @@
                 <%= f.submit %>
               </div>
             <% end %>
+            <br/>
+          <% if @top.comments.first.body == NIL %>
+          <h4>Comments</h4>
+          <p> No comments yet :( </p>
+          <% else %>
+          <h4>Comments</h4>
+          <% @top.comments.each do |comment| %>
+            <p>
+              <%if comment.commenter != NIL %>
+                <b><%= comment.commenter %> says:</b>
+                "<%= comment.body %>"
+              <%end%>
+            </p>
+
+          <% end %>
+          <% end %>
 
         <% end %>
       </div>

@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 		@post = Post.new(post_params)
 		@post.likes = 0
 		@post.user = current_user
+		#@post.comments = Array.new
 		if @post.save
 			flash[:success] = "The photo was added!"
 			redirect_to root_path
