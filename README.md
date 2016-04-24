@@ -78,7 +78,7 @@ http://blackrockdigital.github.io/startbootstrap-clean-blog/post.html for templa
   * Admins can modify or remove anyone’s content
 
 ##Division of Labor:
-  * Thong: Set up user model, set up paperclip for images and posts, set up users page, set up profile page, worked on overall design of models. 
-  * Allen: Generated seeds, set up design for pages, set up home page, assisted with setting up gems, worked on overall design of models.
-  * Niha: Set up react, set up screencast, set up comment model, deployed to Heroku. 
+  * Thong: Set up user model, set up paperclip for images and posts, set up users page, set up profile page, worked on overall design of models, deployed to Heroku. 
+  * Allen: Generated seeds, set up design for pages, set up home page, assisted with setting up gems, worked on overall design of models, helped deploying to Heroku.
+  * Niha: Set up react, set up screencast, set up comment model, helped deploying to Heroku. 
 
